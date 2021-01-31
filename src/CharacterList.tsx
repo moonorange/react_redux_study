@@ -21,9 +21,9 @@ class CharacterList extends Component<CharacterListProps> {
       <>
         <Header as="h2">{school}</Header>
         <Item.Group>
-          {characters.map(c => {
+          {characters.map((c, i) => (
             /* eslint-disable react/jsx-key */
-            <Item>
+            <Item key={i}>
               <Icon name="user circle" size="huge" />
               <Item.Content>
                 <Item.Header>{c.name}</Item.Header>
@@ -35,11 +35,11 @@ class CharacterList extends Component<CharacterListProps> {
               </Item.Content>
             </Item>
             /* eslint-enable */
-          })}
+          ))}
         </Item.Group>
       </>
     );
   }
 }
 
-export de
+export default CharacterList;

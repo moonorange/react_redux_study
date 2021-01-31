@@ -24,21 +24,21 @@ var CharacterList = /** @class */ (function (_super) {
         var _a = this.props, school = _a.school, characters = _a.characters;
         return (react_1["default"].createElement(react_1["default"].Fragment, null,
             react_1["default"].createElement(semantic_ui_react_1.Header, { as: "h2" }, school),
-            react_1["default"].createElement(semantic_ui_react_1.Item.Group, null, characters.map(function (c) {
-                /* eslint-disable react/jsx-key */
-                react_1["default"].createElement(semantic_ui_react_1.Item, null,
-                    react_1["default"].createElement(semantic_ui_react_1.Icon, { name: "user circle", size: "huge" }),
-                    react_1["default"].createElement(semantic_ui_react_1.Item.Content, null,
-                        react_1["default"].createElement(semantic_ui_react_1.Item.Header, null, c.name),
-                        react_1["default"].createElement(semantic_ui_react_1.Item.Meta, null,
-                            c.age,
-                            "\u6B73"),
-                        react_1["default"].createElement(semantic_ui_react_1.Item.Meta, null,
-                            c.height ? c.height : '???',
-                            "cm")));
-                /* eslint-enable */
-            }))));
+            react_1["default"].createElement(semantic_ui_react_1.Item.Group, null, characters.map(function (c, i) { return (
+            /* eslint-disable react/jsx-key */
+            react_1["default"].createElement(semantic_ui_react_1.Item, { key: i },
+                react_1["default"].createElement(semantic_ui_react_1.Icon, { name: "user circle", size: "huge" }),
+                react_1["default"].createElement(semantic_ui_react_1.Item.Content, null,
+                    react_1["default"].createElement(semantic_ui_react_1.Item.Header, null, c.name),
+                    react_1["default"].createElement(semantic_ui_react_1.Item.Meta, null,
+                        c.age,
+                        "\u6B73"),
+                    react_1["default"].createElement(semantic_ui_react_1.Item.Meta, null,
+                        c.height ? c.height : '???',
+                        "cm")))
+            /* eslint-enable */
+            ); }))));
     };
     return CharacterList;
 }(react_1.Component));
-de;
+exports["default"] = CharacterList;
