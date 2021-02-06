@@ -15,6 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 exports.__esModule = true;
 var react_1 = require("react");
 var CharacterList_1 = require("./CharacterList");
+var constants_1 = require("./constants");
 require("./App.css");
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
@@ -22,29 +23,10 @@ var App = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     App.prototype.render = function () {
-        var characters = [
-            {
-                id: 1,
-                name: '羽咲 綾乃',
-                age: 16,
-                height: 151
-            },
-            {
-                id: 2,
-                name: '荒垣 なぎさ',
-                age: 18,
-                height: 174
-            },
-            {
-                id: 3,
-                name: '泉 理子',
-                age: 18
-            },
-        ];
         return (react_1["default"].createElement("div", { className: "container" },
             react_1["default"].createElement("header", null,
                 react_1["default"].createElement("h1", null, "\u30AD\u30E3\u30E9\u30AF\u30BF\u30FC")),
-            react_1["default"].createElement(CharacterList_1["default"], { school: "A\u5B66\u5712", characters: characters })));
+            react_1["default"].createElement(CharacterList_1["default"], { school: "A\u5B66\u5712", characters: constants_1["default"] })));
     };
     return App;
 }(react_1.Component));
