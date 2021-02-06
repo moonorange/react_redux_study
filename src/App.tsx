@@ -28,9 +28,9 @@ class App extends Component {
     return (
       <div className="container">
         <header>
-          <h1>キャラクタ一覧</h1>
+          <h1>キャラクター</h1>
         </header>
-        <CharacterList school="学校" characters={characters} />
+        <CharacterList school="A学園" characters={characters} />
       </div>
     );
   }

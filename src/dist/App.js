@@ -43,8 +43,8 @@ var App = /** @class */ (function (_super) {
         ];
         return (react_1["default"].createElement("div", { className: "container" },
             react_1["default"].createElement("header", null,
-                react_1["default"].createElement("h1", null, "\u30AD\u30E3\u30E9\u30AF\u30BF\u4E00\u89A7")),
-            react_1["default"].createElement(CharacterList_1["default"], { school: "\u5B66\u6821", characters: characters })));
+                react_1["default"].createElement("h1", null, "\u30AD\u30E3\u30E9\u30AF\u30BF\u30FC")),
+            react_1["default"].createElement(CharacterList_1["default"], { school: "A\u5B66\u5712", characters: characters })));
     };
     return App;
 }(react_1.Component));
