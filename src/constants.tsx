@@ -1,4 +1,6 @@
 import { Character } from './CharacterList';
+import { School } from './CharacterList';
+
 
 const characters: Character[] = [
   {
@@ -20,4 +22,19 @@ const characters: Character[] = [
   },
 ];
 
-export default characters;
+const schools: School[] = [
+  {
+    id: 1,
+    name: 'A学園',
+  },
+  {
+    id: 2,
+    name: 'B学園',
+  },
+  {
+    id: 3,
+    name: 'C学園'
+  },
+];
+
+export { characters, schools };

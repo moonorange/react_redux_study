@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.schools = exports.characters = void 0;
 var characters = [
     {
         id: 1,
@@ -19,4 +20,19 @@ var characters = [
         age: 18
     },
 ];
-exports["default"] = characters;
+exports.characters = characters;
+var schools = [
+    {
+        id: 1,
+        name: 'A学園'
+    },
+    {
+        id: 2,
+        name: 'B学園'
+    },
+    {
+        id: 3,
+        name: 'C学園'
+    },
+];
+exports.schools = schools;

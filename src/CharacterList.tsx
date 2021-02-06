@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Icon, Item } from 'semantic-ui-react';
+import { Icon, Item } from 'semantic-ui-react';
 
 export interface Character {
   id: number;
@@ -8,18 +8,22 @@ export interface Character {
   height?: number;
 }
 
+export interface School {
+  id: number;
+  name: string;
+}
+
 interface CharacterListProps {
-  school: string;
+  schools?: School[];
   characters: Character[];
 }
 
 class CharacterList extends Component<CharacterListProps> {
   render() {
-    const { school, characters } = this.props;
+    const { schools, characters } = this.props;
 
     return (
       <>
-        <Header as="h2">{school}</Header>
         <Item.Group>
           {characters.map((c, i) => (
             /* eslint-disable react/jsx-key */
@@ -32,6 +36,7 @@ class CharacterList extends Component<CharacterListProps> {
                   {c.height ? c.height : '???'}
                   cm
                 </Item.Meta>
+                <Item.Meta>{schools ? schools[i].name : '???'}</Item.Meta>
               </Item.Content>
             </Item>
             /* eslint-enable */

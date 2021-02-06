@@ -21,9 +21,8 @@ var CharacterList = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CharacterList.prototype.render = function () {
-        var _a = this.props, school = _a.school, characters = _a.characters;
+        var _a = this.props, schools = _a.schools, characters = _a.characters;
         return (react_1["default"].createElement(react_1["default"].Fragment, null,
-            react_1["default"].createElement(semantic_ui_react_1.Header, { as: "h2" }, school),
             react_1["default"].createElement(semantic_ui_react_1.Item.Group, null, characters.map(function (c, i) { return (
             /* eslint-disable react/jsx-key */
             react_1["default"].createElement(semantic_ui_react_1.Item, { key: i },
@@ -35,7 +34,8 @@ var CharacterList = /** @class */ (function (_super) {
                         "\u6B73"),
                     react_1["default"].createElement(semantic_ui_react_1.Item.Meta, null,
                         c.height ? c.height : '???',
-                        "cm")))
+                        "cm"),
+                    react_1["default"].createElement(semantic_ui_react_1.Item.Meta, null, schools ? schools[i].name : '???')))
             /* eslint-enable */
             ); }))));
     };

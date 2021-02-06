@@ -26,7 +26,7 @@ var App = /** @class */ (function (_super) {
         return (react_1["default"].createElement("div", { className: "container" },
             react_1["default"].createElement("header", null,
                 react_1["default"].createElement("h1", null, "\u30AD\u30E3\u30E9\u30AF\u30BF\u30FC")),
-            react_1["default"].createElement(CharacterList_1["default"], { school: "A\u5B66\u5712", characters: constants_1["default"] })));
+            react_1["default"].createElement(CharacterList_1["default"], { schools: constants_1.schools, characters: constants_1.characters })));
     };
     return App;
 }(react_1.Component));

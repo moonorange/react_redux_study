@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CharacterList from './CharacterList';
-import characters from './constants';
+import { characters, schools } from './constants';
 
 import './App.css';
 
@@ -11,7 +11,7 @@ class App extends Component {
         <header>
           <h1>キャラクター</h1>
         </header>
-        <CharacterList school="A学園" characters={characters} />
+        <CharacterList schools={schools} characters={characters} />
       </div>
     );
   }
