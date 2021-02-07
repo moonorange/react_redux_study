@@ -4,20 +4,21 @@ exports.schools = exports.characters = void 0;
 var characters = [
     {
         id: 1,
-        name: '羽咲 綾乃',
-        age: 16,
-        height: 151
+        name: '空条承太郎',
+        age: 17,
+        height: 195
     },
     {
         id: 2,
-        name: '荒垣 なぎさ',
-        age: 18,
-        height: 174
+        name: '東方仗助',
+        age: 16,
+        height: 180
     },
     {
         id: 3,
-        name: '泉 理子',
-        age: 18
+        name: 'Joseph Joestar',
+        age: 18,
+        height: 195
     },
 ];
 exports.characters = characters;
