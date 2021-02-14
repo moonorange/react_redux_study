@@ -71,12 +71,18 @@ componentDidUpdate(prevProps,prevState, snapshot?)  戻り値型 void  コンホ
 componentWillUnmount() 戻り値型 void  コンポーネントがアンマウントされる直前に呼ばれる
 ```
 
+### 関数コンポーネント
+
+関数コンポーネントはまず Local State を持つことができない。そしてライフサイクルメソッドを備えられない
 `SFC`は 『Stateless Function Component』の略。StatelessComponent という型の Type Alias
+状態を持たなければ副作用も起きにくい。だから React では関数コンポーネントを積極的に利用するべき
 
 ## 第 8 章 合成するぞ Recompose
 
 Presentational Component と Container Componentの二種類ある
-
+関数コンポーネントも、外から機能を追加されることで Container Component になることができる。
+それを実現するのがHOC、Higer Order Componentである。
+HOCとはコンポーネントを引数にとって、戻り値としてコンポーネントを返す関数のことである
 ### Presentational Component
 
 「どのように見えるか」に関心を持つ
@@ -96,3 +102,8 @@ Flux の Action を実行したり、Flux の Store に依存する
 しばしばデータの状態を持つ
 しばしばデータの変更に介入して、任意の処理を行う
 HOCが多用される(Higer Order Component)
+
+### Recompose
+
+関数コンポーネントにライフサイクルメソッドや Local State を追加したり、複数の HOC を 合成してひとつにまとめたり、といった API が提供されている
+
