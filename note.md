@@ -184,8 +184,50 @@ function counterReducer(state = initialState, action) {
 }
 ```
 
+### Store
+
+現在のstateの状態を保持するオブジェクト
+storeはreducerを渡して作成され、現在の状態の値を返すgetStateというメソッドを持っている。
+
+```javascript
+import { configureStore } from '@reduxjs/toolkit'
+
+const store = configureStore({ reducer: counterReducer })
+
+console.log(store.getState())
+// {value: 0}
+```
+
+#### Dispatch
+
+Redux Storeはdispatchと呼ばれるメソッドを持っている。
+stateを更新する唯一の方法はstore.dispatch()をactionオブジェクトを引数に呼ぶことである。 そしてstoreはreducer functionを走らせ新しいstateを保存する。そしてgetState()で更新された値を取得することができる。
 
 
+```javascript
+const increment = () => {
+  return {
+    type: 'counter/increment'
+  }
+}
+
+store.dispatch(increment())
+
+console.log(store.getState())
+// {value: 2}
+```
+
+### Selector
+
+storeのstateからどうやって特定の情報を取り出すか決める関数。
+
+```javascript
+const selectCounterValue = state => state.value
+
+const currentValue = selectCounterValue(store.getState())
+console.log(currentValue)
+// 2
+```
 
 # 参考
 
