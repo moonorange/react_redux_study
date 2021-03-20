@@ -148,6 +148,43 @@ const addTodo = text => {
 }
 ```
 
+### Reducers
+
+現在のstateとactionを受け取って必要であればどのようにstateをupdateするかを決める関数。
+
+新しいstateをreturnする。
+
+action typeに応じてeventsをhandleするevent listenerのようなもの
+
+```
+"Reducer" functions get their name because they're similar to the kind of callback function you pass to the Array.reduce() method.
+```
+
+#### ルール
+
+- 引数に受け取ったstateとactionに基づいて新しいstateを計算する
+- 既存のstateを変更することはできない。その代わり既存のstateをコピーしコピーした値に変更を加える
+- 非同期ロジックやランダムな計算などいかなる副作用も引き起こさない
+
+```javascript
+const initialState = { value: 0 }
+
+function counterReducer(state = initialState, action) {
+  // Check to see if the reducer cares about this action
+  if (action.type === 'counter/increment') {
+    // If so, make a copy of `state`
+    return {
+      ...state,
+      // and update the copy with the new value
+      value: state.value + 1
+    }
+  }
+  // otherwise return the existing state unchanged
+  return state
+}
+```
+
+
 
 
 # 参考
