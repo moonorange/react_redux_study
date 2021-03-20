@@ -83,6 +83,7 @@ Presentational Component と Container Componentの二種類ある
 関数コンポーネントも、外から機能を追加されることで Container Component になることができる。
 それを実現するのがHOC、Higer Order Componentである。
 HOCとはコンポーネントを引数にとって、戻り値としてコンポーネントを返す関数のことである
+
 ### Presentational Component
 
 「どのように見えるか」に関心を持つ
@@ -107,3 +108,53 @@ HOCが多用される(Higer Order Component)
 
 関数コンポーネントにライフサイクルメソッドや Local State を追加したり、複数の HOC を 合成してひとつにまとめたり、といった API が提供されている
 
+
+## Redux
+
+Reduxは、actionsと呼ばれるイベントを使ってUIのstate(状態)を管理をするためのフレームワーク。Reactではstateの管理するデータフローにFluxを提案しているが、ReduxはFluxの概念を拡張してより扱いやすく設計されている。
+
+![](imgs/redux_flow.png)
+
+
+### Action
+
+アプリケーションで起こった何かを記述するイベント
+
+アプリからstoreやデータを送るためのpayloadを渡す役割
+
+プレーンなjavascriptオブジェクト
+
+type propertyをstring型で必ず持つ必要があり"domain/eventName"のような形式で記述されることが多い。
+
+```javascript
+const addTodoAction = {
+  type: 'todos/todoAdded',
+  payload: 'Buy milk'
+}
+```
+
+### Action Creator
+
+actionオブジェクトを創り返す関数である。
+
+繰り返しactionオブジェクトを書く必要がないようにactionオブジェクトを創る時に使う。
+
+```javascript
+const addTodo = text => {
+  return {
+    type: 'todos/todoAdded',
+    payload: text
+  }
+}
+```
+
+
+
+# 参考
+
+公式doc
+https://redux.js.org/tutorials/essentials/part-1-overview-concepts
+
+https://www.youtube.com/watch?v=so0JgVToRLk&list=PLX8Rsrpnn3IWavNOj3n4Vypzwb3q1RXhr&index=3
+
+https://qiita.com/kitagawamac/items/49a1f03445b19cf407b7
