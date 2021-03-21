@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
-import CharacterList from './CharacterList';
-import { characters, schools } from './constants';
+import { CounterState } from './counterReducer'
+import { useSelector } from 'react-redux'
 
-import './App.css';
-
-class App extends Component {
-  render() {
+function App() {
+  const value = useSelector<CounterState>((state) => state.value);
     return (
-      <div className="container">
-        <header>
-          <h1>キャラクター</h1>
-        </header>
-        <CharacterList schools={schools} characters={characters} />
-      </div>
+        <div className="container">
+          <p>{ value }</p>
+        </div>
     );
   }
-}
 
 export default App;
