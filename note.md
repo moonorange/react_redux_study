@@ -113,7 +113,10 @@ HOCが多用される(Higer Order Component)
 
 Reduxは、actionsと呼ばれるイベントを使ってUIのstate(状態)を管理をするためのフレームワーク。Reactではstateの管理するデータフローにFluxを提案しているが、ReduxはFluxの概念を拡張してより扱いやすく設計されている。
 
-![](imgs/redux_flow.png)
+![](imgs/redux_dataflow.png)
+
+viewであるcomponentで何かしらのイベントが発火したらaction creatorsによってactionが作られstoreにdispatchされる。
+reducersでactionに応じてstateがどのように変更されるか決められて新しいstateがstoreに返される。
 
 
 ### Action
@@ -228,6 +231,8 @@ const currentValue = selectCounterValue(store.getState())
 console.log(currentValue)
 // 2
 ```
+
+![](imgs/ReduxDataFlowDiagram.gif)
 
 # 参考
 
