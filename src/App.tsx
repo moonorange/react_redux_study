@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-import { CounterState } from './counterReducer'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { incrementAction, decrementAction } from './counterAction'
+import { getCounterValue } from './selector'
 
 function App() {
-  const value = useSelector<CounterState>((state) => state.value);
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state);
+  const value = getCounterValue(selector)
+  // console.log(selector);
+  // console.log(value);
+
     return (
         <div className="container">
-          <p>{ value }</p>
+          <p>{value}</p>
+          <button onClick={() => dispatch(incrementAction())}>
+            Add
+          </button>
+          <button onClick={() => dispatch(decrementAction())}>
+            Subtract
+          </button>
         </div>
     );
   }

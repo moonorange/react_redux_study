@@ -13,14 +13,13 @@ var __assign = (this && this.__assign) || function () {
 exports.__esModule = true;
 exports.counterReducer = void 0;
 var store_1 = require("./store");
-;
 exports.counterReducer = function (state, action) {
-    if (state === void 0) { state = store_1.initialState; }
+    if (state === void 0) { state = store_1.initialState.counter; }
     switch (action.type) {
         case "INCREMENT":
-            return __assign(__assign({}, state), action.payload);
+            return __assign(__assign({}, state), { value: state.value + 1 });
         case "DECREMENT":
-            return __assign(__assign({}, state), action.payload);
+            return __assign(__assign({}, state), { value: state.value - 1 });
         default:
             return state;
     }
